@@ -1,0 +1,51 @@
+.list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  scrollbar-width: none;
+}
+
+.list::-webkit-scrollbar {
+  display: none;
+}
+
+.list-div-user {
+  display: flex;
+  justify-content: right;
+  padding: 0 5% 0 15%;
+  margin-top: 25px;
+}
+
+.user-message {
+  font-size: 17px;
+  background: rgb(64, 64, 64);
+  color: white;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.user-icon {
+  color: rgb(29, 29, 29);
+  padding-top: 5px;
+  margin-left: 5px;
+}
+
+.list-div-bot {
+  display: flex;
+  justify-content: left;
+  padding: 0 15% 0 5%;
+  margin-top: 25px;
+}
+
+.bot-message {
+  font-size: 17px;
+  background: rgb(203, 203, 203);
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.bot-icon {
+  color: rgb(29, 29, 29);
+  padding-top: 5px;
+  margin-right: 5px;
+}
