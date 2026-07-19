@@ -8,7 +8,9 @@ import ProtectedRoute from "./ProtectedRoute";
 
 function App() {
   const [selectedConversation, setSelectedConversation] = useState(null);
-  let [username, setUsername] = useState("");
+  const [username, setUsername] = useState(
+    localStorage.getItem("username") || "",
+  );
 
   return (
     <BrowserRouter>

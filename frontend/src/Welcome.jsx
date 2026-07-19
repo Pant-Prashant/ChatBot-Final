@@ -52,7 +52,8 @@ function Welcome({ setUsername }) {
 
     let loginStatusMessage = await allowAccess(name, password);
 
-    if (loginStatusMessage == "OK") {
+    if (loginStatusMessage === "OK") {
+      localStorage.setItem("username", name);
       setUsername(name);
       navigate("/chat");
     }
