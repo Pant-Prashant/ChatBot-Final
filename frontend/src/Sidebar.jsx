@@ -10,6 +10,7 @@ function Sidebar({
   setLoadConversations,
 }) {
   const [conversations, setConversations] = useState([]);
+  const API = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     if (username) {
@@ -19,9 +20,7 @@ function Sidebar({
 
   async function loadConversations() {
     try {
-      const response = await fetch(
-        `http://127.0.0.1:8000/conversations/${username}`,
-      );
+      const response = await fetch(`${API}/conversations/${username}`);
 
       if (!response.ok) {
         console.log(await response.text());

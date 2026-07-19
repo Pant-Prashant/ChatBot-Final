@@ -8,6 +8,8 @@ function SignUp({ setUsername }) {
   let [password2, setPassword2] = useState("");
   let navigate = useNavigate();
 
+  const API = import.meta.env.VITE_API_URL;
+
   const preventSpace = (e) => {
     if (e.key === " ") {
       e.preventDefault();
@@ -16,7 +18,7 @@ function SignUp({ setUsername }) {
 
   async function allowSignUp(name, password) {
     try {
-      const response = await fetch("http://127.0.0.1:8000/sign-up", {
+      const response = await fetch(`${API}/sign-up`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

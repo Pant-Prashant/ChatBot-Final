@@ -10,12 +10,14 @@ function Chat({ username, selectedConversation, setSelectedConversation }) {
 
   const bottomRef = useRef(null);
 
+  const API = import.meta.env.VITE_API_URL;
+
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [chat]);
 
   async function sendMessage(userMessage) {
-    const response = await fetch("http://127.0.0.1:8000/chat_request", {
+    const response = await fetch(`${API}/chat_request`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -80,9 +82,7 @@ function Chat({ username, selectedConversation, setSelectedConversation }) {
   };
 
   async function loadMessages(conversationId) {
-    const response = await fetch(
-      `http://127.0.0.1:8000/messages/${conversationId}`,
-    );
+    const response = await fetch(`${API}/messages/${conversationId}`);
 
     const data = await response.json();
 
