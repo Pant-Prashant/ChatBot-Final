@@ -17,11 +17,6 @@ A full-stack AI chatbot application built with **React**, **FastAPI**, **Postgre
 
 ---
 
-## Live Link
-https://chatbot-by-prashant.onrender.com
-
----
-
 ## 🛠️ Tech Stack
 
 ### Frontend
